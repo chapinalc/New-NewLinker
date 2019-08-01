@@ -156,6 +156,7 @@ def writeNites(trips, mjd_arr, interval, outfile):
     trackCol = []
     mjdCol = []
     for trip in trips:
+        # When called by generate_predictions in graphTripPath, only runs once
         mjdDict = {}
         for mjd in mjd_arr:
             if(mjd not in mjdDict):
@@ -179,6 +180,7 @@ def writeNites(trips, mjd_arr, interval, outfile):
 
 '''
 input: --input file to C code for orbit position predictor
+       --output file name 
        --orbital parameter fits file
 output: --dictionary from trackid and mjd to ra, dec, and error
 '''
@@ -213,6 +215,7 @@ def callMjdPrediction(inputFile, outputname, orbitFile, overwrite=True):
     
     MJD = namedtuple('MJD', 'RA DEC ERR')
     for x in xrange(len(trackids)):
+        # Is this a typo? (xrange)
         if time.time() - time0 > nextUp:
             LL.printPercentage(x, len(trackids), time.time()-time0)
             nextUp+=60
@@ -477,6 +480,7 @@ def efficientWrap(csvFile):
                     'ccdnum':'ccd', 'errawin_world': 'err'}, inplace=True)
     df = df[['mjd', 'err', 'ra', 'dec', 'objid', 'expnum']]   
     return df
+
 
 def main():
     parser = argparse.ArgumentParser()
