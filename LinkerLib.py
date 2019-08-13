@@ -10,7 +10,10 @@ from collections import namedtuple
 
 from datetime import datetime
 import time
-import pickle
+try:
+   import cPickle as pickle
+except:
+   import pickle
 
 import ephem
 from astropy.time import Time
