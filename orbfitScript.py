@@ -8,7 +8,10 @@ import os
 tnopath = os.environ['TNO_PATH']
 sys.path.insert(0, tnopath)
 import argparse
-import pickle
+try:
+   import cPickle as pickle
+except:
+   import pickle
 import math
 from GammaTPlotwStatTNOExFaster import mjdToDate
 
