@@ -12,7 +12,10 @@ from LinkerLib import pickleTriplets
 import LinkerLib as LL
 
 import numpy as np
-import cPickle as pickle
+try:
+   import cPickle as pickle
+except:
+   import pickle
 import argparse
 import time
 import ephem
