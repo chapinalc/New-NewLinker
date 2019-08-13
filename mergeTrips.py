@@ -13,7 +13,10 @@ from LinkerLib import writeTriplets
 from LinkerLib import pickleTriplets
 
 from astropy.table import Table
-import pickle
+try:
+   import cPickle as pickle
+except:
+   import pickle
 import time
 import argparse
 
