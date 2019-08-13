@@ -14,7 +14,10 @@ import numpy as np
 import pandas as pd
 import scipy.spatial as sp
 import argparse
-import pickle
+try:
+   import cPickle as pickle
+except:
+   import pickle
 import time
 
 from astropy.table import Table
