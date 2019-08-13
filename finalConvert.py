@@ -10,7 +10,10 @@ import numpy as np
 import math
 from astropy.table import Table
 import time
-import pickle
+try:
+   import cPickle as pickle
+except:
+   import pickle
 import argparse
 
 
