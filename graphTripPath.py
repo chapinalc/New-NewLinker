@@ -11,7 +11,10 @@ from LinkerLib import printPercentage
 import growTriplets as gt
 
 import time
-import pickle
+try:
+   import cPickle as pickle
+except:
+   import pickle
 import numpy as np
 import matplotlib.pyplot as plt
 import re
